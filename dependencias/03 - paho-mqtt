@@ -1,0 +1,5 @@
+Considerando que iremos utilizar um broker mqtt e uma aplicação em python para fornecer a comunicação entre os sensores e o servidor com o banco de dados, iremos utilizar o pacote paho-mqtt para criar a aplicação em python
+A sua instalação é MUITO simples, basta executar o seguinte comando no terminal:
+pip3 install paho-mqtt
+
+E é isso
