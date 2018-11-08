@@ -1,0 +1,15 @@
+A instalação do Mysql-Server na Raspberry não é diferente da instalação em um sistema Linux qualquer, sendo necessário apenas o seguinte comando:
+#1 Fazer a atualização do sistema
+sudo apt-get update
+sudo apt-get upgrade
+
+#2 Desinstalar QUALQUER instalação ou pacote existente do mysql que possa existir na sua Raspberry, com o seguinte comando
+sudo apt-get purge mysql*
+
+#2 Fazer a instalação do servidor de banco de dados Mysql
+sudo apt-get install mysql-server mysql-client
+
+Essa instalação padrão, não possui senha para o usuário root, e pode lugar com a mesma da seguinte forma:
+sudo mysql -u root
+
+se aparecer no terminal "mysql>", é por que a instalação funcionou sem nenhum problema
