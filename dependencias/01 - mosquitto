@@ -1,0 +1,13 @@
+Instalação do Broker MQTT Mosquitto na Raspberry PI
+
+Antes de tudo, é uma boa ideia fazer update dos repositórios do seu gerenciador de pacotes e upgrade dos seus pacotes já instalados. Para isso, execute os comandos abaixo:
+
+sudo apt-get update
+sudo apt-get upgrade
+
+Feito isso, o broker MQTT Mosquitto pode ser instalado na sua Raspberry PI Zero W com o comando abaixo:
+
+sudo apt-get install mosquitto
+
+Ao término da instalação, o broker MQTT Mosquitto já está instalado e rodando como um serviço Linux!
+É IMPORTANTE ressalter que o broker MQTT já entra em execução assim que é instalado e não é necessário realizar mais nenhuma configuração no mesmo. As demais configurações para recebimento e armazenamento das leituras, serão feitas utilizando uma aplicação em python, construída para tal finalidade.
