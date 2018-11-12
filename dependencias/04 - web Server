@@ -2,7 +2,17 @@ Para a correta demonstração dos dados, agora é necessário a instalação e c
 sudo apt-get install apache2
 sudo apt-get install php
 
+Após a instalação do interpretador php e do servidor web apache, é necessário ativar o driver de conexão com o mysql do php, com o seguinte comando:
+sudo phpenmod pdo_mysql
+E após isso, reiniciar o serviço do apache, com o seguinte comando:
+sudo /etc/init.d/apache2 restart
+
 É MUITO importante se atentar para os próximos passos a seguir!
 O Apache (Servidor Web) armazena os arquivos das páginas web no diretório /var/www/html, e é neste diretório que vamos colocar o arquivo responsável por gerar o dashboard para a visualização dos dados do nosso medidor de energia.
+
 Para o dashboard, vamos utilizar a ferramenta dashboard builder, disponível no site https://dashboardbuilder.net/php-dashboard.
 Faça o dowload dos arquivos e adicione na pasta html do apache
+
+
+
+
