@@ -20,6 +20,9 @@ CREATE USER 'novousuario'@'localhost' IDENTIFIED BY 'senha';
 GRANT ALL PRIVILEGES ON * . * TO 'novousuario'@'localhost';
 FLUSH PRIVILEGES;
 
+Para testar se está tudo funcionando corretamente, feche o terminal e tente logar no mysql usando as credenciais criadas:
+mysql -u iot -p iot
+
 Para o protótipo resultante dessa pesquisa, foi utilizado iot como usuário e senha do banco de dados;
 
 Agora resta criar o database e a tabela para armazenamento dos dados de consumo:
@@ -32,3 +35,7 @@ CREATE TABLE consumo(
 	data TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
   
 A partir de agora, a tabela, com os campos necessários para o armazenamento dos dados de consumo, estão prontos
+
+A inserção dos dados é feito da seguinte forma:
+INSERT INTO consumo (tensao, corrente) VALUES (110, 2);
+Onde 110 e 2 são apenas dados que serão recebidos pelos sensores. É importante ressaltar que, a cada inserção é inserido também o código da leitura, juntamente com a data e hora que o dado foi inserido.
