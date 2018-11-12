@@ -13,3 +13,22 @@ Essa instalação padrão, não possui senha para o usuário root, e pode lugar 
 sudo mysql -u root
 
 se aparecer no terminal "mysql>", é por que a instalação funcionou sem nenhum problema
+
+Após a instalação do MySQL, é necessário a criação do usuário com o qual a aplicação de monitoramento de consumo se conectará, além de criar a tabela de consumo de energia:
+Criação do Usuário
+CREATE USER 'novousuario'@'localhost' IDENTIFIED BY 'senha';
+GRANT ALL PRIVILEGES ON * . * TO 'novousuario'@'localhost';
+FLUSH PRIVILEGES;
+
+Para o protótipo resultante dessa pesquisa, foi utilizado iot como usuário e senha do banco de dados;
+
+Agora resta criar o database e a tabela para armazenamento dos dados de consumo:
+CREATE DATABASE consumo;
+USE consumo;
+CREATE TABLE consumo(
+	id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	tensao INT NOT NULL,
+	corrente DECIMAL(10,2) NOT NULL,
+	data TIMESTAMP DEFAULT CURRENT_TIMESTAMP());
+  
+A partir de agora, a tabela, com os campos necessários para o armazenamento dos dados de consumo, estão prontos
